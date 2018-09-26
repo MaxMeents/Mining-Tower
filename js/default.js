@@ -150,7 +150,7 @@ setInterval(function(){saveState()},1000)
         $('.Tower,.AreaName').css({ marginLeft: ww / 2 - 200 })
         $('.Tower,.AreaName').css({ marginTop: wh / 2 - 180 })
     }
-    Center();    
+    Center();
     $(window).resize(function() { Center() })
     $('.CloseWindow').click(function(){
     	$('.Resources,.Resource,.CloseWindow').css({display:'none'})
@@ -173,7 +173,7 @@ setInterval(function(){saveState()},1000)
     startingHP = 10;
     BlockHP = startingHP;
     BlockNum = 1;
-    clickDamage = 1000;
+    clickDamage = 1;
     clickDamageR = clickDamage;
     setInterval(function() {
 
@@ -220,7 +220,6 @@ setInterval(function(){saveState()},1000)
     function NewBlock() {
         startingHP = startingHP * 1.01
         constantDamage = constantDamage ;
-        clickDamage = clickDamage * 1.01;
         BlockHP = startingHP;
         
         for (var i = 0; i < 1000; i++) {
@@ -258,26 +257,19 @@ setInterval(function(){saveState()},1000)
         }
 
         $('.AreaName').html(AreaName)
-        
-        
-GenerateNextBlock();
-			NewBlockImg = Block_Name;
-			//reserve for when inside last loop;
+        GenerateNextBlock();
+        NewBlockImg = Block_Name;
+
         for (var i = 1; i <= 15; i++) {
-        	
             $('.Floor_' + i).find('img').attr('src', $('.Floor_' + (i + 1)).find('img').attr('src'))
             $('.Floor_' + i).data("Name",$('.Floor_' + (i + 1)).data("Name"))
-            $('.Floor_' + i).find('img').attr('src', 'img/' + NewBlockImg + '.png')
-        $('.Floor_' + i).data("Name",Block_Name.replace(/ /g,"_"));
-        window[$('.Floor_' + i).data('Name')+ "_Amount"]++;
-        $('.'+$('.Floor_' + i).data('Name')).find('.Amount').html(shortenNumber(window[$('.Floor_' + i).data('Name')+ "_Amount"]))
-
         }
-        
+        $('.Floor_15').find('img').attr('src', 'img/' + NewBlockImg + '.png')
+        $('.Floor_15').data("Name",Block_Name.replace(/ /g,"_"));
         BlockNum++;
         $('.BlockNum').html(BlockNum)
-        
-        
+        window[$('.Floor_1').data('Name')+ "_Amount"]++;
+        $('.'+$('.Floor_1').data('Name')).find('.Amount').html(shortenNumber(window[$('.Floor_1').data('Name')+ "_Amount"]))
 
     }
 

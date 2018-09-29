@@ -4,11 +4,12 @@ body{background: royalblue;background-image: url("../img/background.jpg");backgr
 	margin-left: 170px;
 	background: transparent;
 	width:400px;
-	height:380px;
+	height:800px;
 	overflow: hidden;
+	top:100px;
 	
 }
-.AreaName{width:400px;position: absolute;top:380px;text-align:center;color:white;font-size:30px;background:royalblue;border-radius:0px;z-index:105;}
+.AreaName{background:white;width:500px;position: absolute;top:0px;text-align:center;color:black;font-size:29px;border-radius:25px;z-index:105;left:-50px;height:100px;line-height:100px;background-image:url("../img/ffb.png");background-size:492px 99px;}
 .Chunk{
 	position: absolute;
 }
@@ -55,6 +56,18 @@ body{background: royalblue;background-image: url("../img/background.jpg");backgr
 	left:0px;
 	z-index: 104;
 }
+.Chunk_16_1{
+
+}
+.Chunk_16_2{
+position: absolute;top: 48px;left: -83px;z-index: 150;;;;;
+}
+.Chunk_16_3{
+position: absolute;top: 48px;left: 83px;z-index: 150;;;;;
+}
+.Chunk_16_4{
+position: absolute;top: 96px;left: 0px;z-index: 151;;;;;
+}
 .Floor{
 	position: absolute;
 }
@@ -68,29 +81,35 @@ body{background: royalblue;background-image: url("../img/background.jpg");backgr
 .BlockNum{
 	position: absolute;
 	width: 75px;
-	background: black;;
+	background: white;;
 	height: 40px;
-	border-radius: 10px;
+	border-radius: 11px;
 	text-align: center;
-	color: royalblue;
+	color: white;
 	line-height: 40px;
 	font-size: 22px;
 	left: 323px;
+	background-image: url("../img/AreaNum_BG.gif");
+	background-size: 73px 37px;
 }
 .BlockHP{
 	position: absolute;
 		width: 117px;
 	background: white;;
 	height: 55px;
-	border-radius: 10px;
+	border-radius: 35px;
 	text-align: center;
-	color: royalblue;
+	color: white;
 	line-height: 40px;
 	font-size: 22px;
+	background-image: url("../img/Block_HP.gif");
+	background-size: 117px 58px;
+	opacity: .8;;
+
 }
 
 
-.startingHP{position: absolute;left: 65px;top: 29px;color: royalblue;font-size: 16px;;;;;;
+.startingHP{position: absolute;left: 65px;top: 29px;color: white;font-size: 16px;;;;;;
 
 }
 .Resource{

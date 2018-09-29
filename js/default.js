@@ -44,6 +44,52 @@ $(document).ready(function() {
     Packed_Snow_Amount = 0;
     Dirt_Amount = 0;
 
+    Blank_Ugly_Bricks_M = 1;
+Blank_Old_Box_M = 1;
+Blank_Valunite_M = 1;
+Blank_Wood_M = 1;
+Blank_Sandstone_M = 1;
+Blank_Sand_M = 1;
+Blank_Rich_Soil_M = 1;
+Blank_Blood_Crystal_M = 1;
+Blank_Ice_M = 1;
+Blank_Malachite_M = 1;
+Blank_Grass_M = 1;
+Blank_Packed_Sand_M = 1;
+Blank_Blue_Key_M = 1;
+Blank_Red_Key_M = 1;
+Blank_Extra_Coins_M = 1;
+Blank_Explosion_M = 1;
+Blank_Green_Key_M = 1;
+Blank_Yellow_Key_M = 1;
+Blank_Bonus_Coins_M = 1;
+Blank_Huge_Explosion_M = 1;
+Blank_Steel_M = 1;
+Blank_Refined_Steel_M = 1;
+Blank_Stone_M = 1;
+Blank_Ruby_M = 1;
+Blank_Diamond_M = 1;
+Blank_Gold_M = 1;
+Blank_Silver_M = 1;
+Blank_Calcite_M = 1;
+Blank_Coal_M = 1;
+Blank_Aquamarine_M = 1;
+Blank_Pixie_Dust_M = 1;
+Blank_Emerald_M = 1;
+Blank_Fossils_M = 1;
+Blank_Boxes_M = 1;
+Blank_Unknown_M = 1;
+Blank_Stone_Bricks_M = 1;
+Blank_Brick_M = 1;
+Blank_Bamboo_M = 1;
+Blank_Sand_Crystal_M = 1;
+Blank_Ice_Crystal_M = 1;
+Blank_Snow_Crystal_M = 1;
+Blank_Big_Explosion_M = 1;
+Blank_Packed_Snow_M = 1;
+Blank_Dirt_M = 1;
+
+
         Ugly_Bricks_Amount = getCookie("Ugly_Bricks",Ugly_Bricks_Amount,365);
     Old_Box_Amount = getCookie("Old_Box",Old_Box_Amount,365);
     Valunite_Amount = getCookie("Valunite",Valunite_Amount,365);
@@ -148,7 +194,7 @@ setInterval(function(){saveState()},1000)
         ww = $(window).width();
         wh = $(window).height();
         $('.Tower,.AreaName').css({ marginLeft: ww / 2 - 200 })
-        $('.Tower,.AreaName').css({ marginTop: wh / 2 - 180 })
+        //$('.Tower').css({ marginTop: wh / 2 - 100 })
     }
     Center();
     $(window).resize(function() { Center() })
@@ -156,24 +202,24 @@ setInterval(function(){saveState()},1000)
     	$('.Resources,.Resource,.CloseWindow').css({display:'none'})
     })
 
-    $('.Floor').duplicate(15).appendTo('.Tower');
+    $('.Floor').duplicate(25).appendTo('.Tower');
     z = 1;
     FloorTop = 0;
     FloorTopAddAmount = 23;
-    for (var i = 0; i < 15; i++) {
+    for (var i = 0; i < 25; i++) {
         $($('.Floor')[i]).addClass('Floor_' + z).css({ top: FloorTop, zIndex: 99 - z })
         z++;
         FloorTop += FloorTopAddAmount;
     }
 
     $('.Floor').last().empty().remove();
-    constantDamage = 100;
+    constantDamage = 10;
     constantDamageR = constantDamage;
 
     startingHP = 10;
     BlockHP = startingHP;
     BlockNum = 1;
-    clickDamage = 1;
+    clickDamage = 10;
     clickDamageR = clickDamage;
     setInterval(function() {
 
@@ -191,7 +237,7 @@ setInterval(function(){saveState()},1000)
         }
         constantDamageR = constantDamage;
 
-    }, 10)
+    }, 10000)
 
     $('.Tower').click(function() {
 
@@ -220,101 +266,179 @@ setInterval(function(){saveState()},1000)
     function NewBlock() {
         startingHP = startingHP * 1.01
         constantDamage = constantDamage ;
+        clickDamage = clickDamage * 1.01;
         BlockHP = startingHP;
         
         for (var i = 0; i < 1000; i++) {
-            if (BlockNum > 450 + (i * 500)) {
+            if (BlockNum > 45000 + (i * 50000)) {
                 CalculateLucky()
-                AreaName = AreaName + ' '+(i+1);
-            } else if (BlockNum > 400+ (i * 500)) {
+                //AreaName = AreaName + ' LvL '+(i+1);
+            } else if (BlockNum > 40000+ (i * 50000)) {
                 CalculateOldCiv()
-                AreaName = AreaName + ' '+(i+1);
-            } else if (BlockNum > 300+ (i * 500)) {
+                //AreaName = AreaName + ' LvL '+(i+1);
+            } else if (BlockNum > 30000+ (i * 50000)) {
                 CalculateDiamondOcean()
-                AreaName = AreaName + ' '+(i+1);
-            } else if (BlockNum > 200+ (i * 500)) {
+                //AreaName = AreaName + ' LvL '+(i+1);
+            } else if (BlockNum > 20000+ (i * 50000)) {
                 CalculateFrozenLake()
-                AreaName = AreaName + ' '+(i+1);
-            } else if (BlockNum > 150+ (i * 500)) {
+                //AreaName = AreaName + ' LvL '+(i+1);
+            } else if (BlockNum > 15000+ (i * 50000)) {
                 CalculateSand()
-                AreaName = AreaName + ' '+(i+1);
-            } else if (BlockNum > 100+ (i * 500)) {
+                //AreaName = AreaName + ' LvL '+(i+1);
+            } else if (BlockNum > 10000+ (i * 50000)) {
                 CalculateOldShaft()
-                AreaName = AreaName + ' '+(i+1);
-            } else if (BlockNum > 75+ (i * 500)) {
+                //AreaName = AreaName + ' LvL '+(i+1);
+            } else if (BlockNum > 7500+ (i * 50000)) {
                 CalculateOldShaft()
-                AreaName = AreaName + ' '+(i+1);
-            } else if (BlockNum > 50+ (i * 500)) {
+                //AreaName = AreaName + ' LvL '+(i+1);
+            } else if (BlockNum > 5000+ (i * 50000)) {
                 CalculateRichDirt()
-                AreaName = AreaName + ' '+(i+1);
-            } else if (BlockNum > 20+ (i * 500)) {
+                //AreaName = AreaName + ' LvL '+(i+1);
+            } else if (BlockNum > 2000+ (i * 50000)) {
                 CalculateDirt()
-                AreaName = AreaName + ' '+(i+1);
-            } else if (BlockNum > 0+(i * 500)) {
-                CalculateTree()
-                AreaName = AreaName + ' '+(i+1);
+                //AreaName = AreaName + ' LvL '+(i+1);
+            } else if (BlockNum > 0+(i * 50000)) {
+                CalculateBlank()
+                //AreaName = AreaName + ' LvL '+(i+1);
             }
         }
 
         $('.AreaName').html(AreaName)
-        GenerateNextBlock();
-        NewBlockImg = Block_Name;
-
-        for (var i = 1; i <= 15; i++) {
-            $('.Floor_' + i).find('img').attr('src', $('.Floor_' + (i + 1)).find('img').attr('src'))
+        //$('.AreaName').css({background:AreaName_BGC,color:AreaName_TC})
+        for (var i = 1; i <= 25; i++) {
+            $('.Floor_' + i).find('img').each(function(v,e){
+            	$(this).attr('src', $($('.Floor_' + (i + 1)).find('img')[v]).attr('src')).data('Name', $($('.Floor_' + (i + 1)).find('img')[v]).data('Name'))
+            })
+            
             $('.Floor_' + i).data("Name",$('.Floor_' + (i + 1)).data("Name"))
         }
-        $('.Floor_15').find('img').attr('src', 'img/' + NewBlockImg + '.png')
-        $('.Floor_15').data("Name",Block_Name.replace(/ /g,"_"));
+        $('.Floor_25').find('img').each(function(){
+	        GenerateNextBlock();
+    	    NewBlockImg = Block_Name;
+	
+        	$(this).attr('src', 'img/' + NewBlockImg + '.png').data("Name",Block_Name.replace(/ /g,"_"));
+        })
+        
         BlockNum++;
         $('.BlockNum').html(BlockNum)
-        window[$('.Floor_1').data('Name')+ "_Amount"]++;
-        $('.'+$('.Floor_1').data('Name')).find('.Amount').html(shortenNumber(window[$('.Floor_1').data('Name')+ "_Amount"]))
+        $('.Floor_1').find('img').each(function(v,e){
+        window[$(this).data('Name')+ "_Amount"]++;	         
+        Floor_1_Block_Name = $(this).data('Name');
+        console.log(Floor_1_Block_Name)
+        $('.'+Floor_1_Block_Name).find('.Amount').html(shortenNumber(window[Floor_1_Block_Name+ "_Amount"]))
+        })
+        
+        
 
     }
 
-    function Calculate() {
-        CalculateArea('Blank', /*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 0, /*Sand*/ 0, /*Rich_Soil*/ 0, /*Blood_Crystal*/ 0, /*Ice*/ 0, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 0, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 0, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 0, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 0, /*Ruby*/ 0, /*Diamond*/ 0, /*Gold*/ 0, /*Silver*/ 0, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 0, /*Fossils*/ 0, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 0, /*Snow_Crystal*/ 0, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 0)
+    function CalculateBlank() {
+Blank_Ugly_Bricks = 0 * Blank_Ugly_Bricks_M;
+Blank_Old_Box = 0 * Blank_Old_Box_M;
+Blank_Valunite = 0 * Blank_Valunite_M;
+Blank_Wood = 0 * Blank_Wood_M;
+Blank_Sandstone = 0 * Blank_Sandstone_M;
+Blank_Sand = 0 * Blank_Sand_M;
+Blank_Rich_Soil = 0 * Blank_Rich_Soil_M;
+Blank_Blood_Crystal = 0 * Blank_Blood_Crystal_M;
+Blank_Ice = 0 * Blank_Ice_M;
+Blank_Malachite = 1/100 * Blank_Malachite_M;
+Blank_Grass = 0 * Blank_Grass_M;
+Blank_Packed_Sand = 0 * Blank_Packed_Sand_M;
+Blank_Blue_Key = 0 * Blank_Blue_Key_M;
+Blank_Red_Key = 0 * Blank_Red_Key_M;
+Blank_Extra_Coins = 0 * Blank_Extra_Coins_M;
+Blank_Explosion = 0 * Blank_Explosion_M;
+Blank_Green_Key = 0 * Blank_Green_Key_M;
+Blank_Yellow_Key = 0 * Blank_Yellow_Key_M;
+Blank_Bonus_Coins = 0 * Blank_Bonus_Coins_M;
+Blank_Huge_Explosion = 0 * Blank_Huge_Explosion_M;
+Blank_Steel = 0 * Blank_Steel_M;
+Blank_Refined_Steel = 0 * Blank_Refined_Steel_M;
+Blank_Stone = 0 * Blank_Stone_M;
+Blank_Ruby = 1/1000 * Blank_Ruby_M;
+Blank_Diamond = 0 * Blank_Diamond_M;
+Blank_Gold = 0 * Blank_Gold_M;
+Blank_Silver = 0 * Blank_Silver_M;
+Blank_Calcite = 1/100 * Blank_Calcite_M;
+Blank_Coal = 0 * Blank_Coal_M;
+Blank_Aquamarine = 0 * Blank_Aquamarine_M;
+Blank_Pixie_Dust = 0 * Blank_Pixie_Dust_M;
+Blank_Emerald = 0 * Blank_Emerald_M;
+Blank_Fossils = 0 * Blank_Fossils_M;
+Blank_Boxes = 0 * Blank_Boxes_M;
+Blank_Unknown = 0 * Blank_Unknown_M;
+Blank_Stone_Bricks = 0 * Blank_Stone_Bricks_M;
+Blank_Brick = 0 * Blank_Brick_M;
+Blank_Bamboo = 0 * Blank_Bamboo_M;
+Blank_Sand_Crystal = 0 * Blank_Sand_Crystal_M;
+Blank_Ice_Crystal = 0 * Blank_Ice_Crystal_M;
+Blank_Snow_Crystal = 0 * Blank_Snow_Crystal_M;
+Blank_Big_Explosion = 0 * Blank_Big_Explosion_M;
+Blank_Packed_Snow = 0 * Blank_Packed_Snow_M;
+Blank_Dirt = 0 * Blank_Dirt_M;
+SetMain = 1 - (Blank_Ugly_Bricks + Blank_Old_Box + Blank_Valunite + Blank_Wood + Blank_Sandstone + Blank_Sand + Blank_Rich_Soil + Blank_Blood_Crystal + Blank_Ice + Blank_Malachite + Blank_Grass + Blank_Packed_Sand + Blank_Blue_Key + Blank_Red_Key + Blank_Extra_Coins + Blank_Explosion + Blank_Green_Key + Blank_Yellow_Key + Blank_Bonus_Coins + Blank_Huge_Explosion + Blank_Steel + Blank_Refined_Steel + Blank_Stone + Blank_Ruby + Blank_Diamond + Blank_Gold + Blank_Silver + Blank_Calcite + Blank_Coal + Blank_Aquamarine + Blank_Pixie_Dust + Blank_Emerald + Blank_Fossils + Blank_Boxes + Blank_Unknown + Blank_Stone_Bricks + Blank_Brick + Blank_Bamboo + Blank_Sand_Crystal + Blank_Ice_Crystal + Blank_Snow_Crystal + Blank_Big_Explosion + Blank_Packed_Snow + Blank_Dirt)
+//example
+Blank_Bamboo = SetMain
+        CalculateArea('Giant Bamboo Tree', '#654321', 'white',
+        	/*Ugly_Bricks*/ Blank_Ugly_Bricks, 		/*Old_Box*/ Blank_Old_Box, 			/*Valunite*/ Blank_Valunite, 	/*Wood*/ Blank_Wood, 			/*Sandstone*/ Blank_Sandstone, 		/*Sand*/ Blank_Sand, 
+        	/*Rich_Soil*/ Blank_Rich_Soil, 		/*Blood_Crystal*/ Blank_Blood_Crystal, 	/*Ice*/ Blank_Ice, 			/*Malachite*/ Blank_Malachite, 		/*Grass*/ Blank_Grass, 			/*Packed_Sand*/ Blank_Packed_Sand, 
+        	/*Blue_Key*/ Blank_Blue_Key, 		/*Red_Key*/ Blank_Red_Key, 			/*Extra_Coins*/ Blank_Extra_Coins, 	/*Explosion*/ Blank_Explosion, 		/*Green_Key*/ Blank_Green_Key, 		/*Yellow_Key*/ Blank_Yellow_Key, 
+        	/*Bonus_Coins*/ Blank_Bonus_Coins, 		/*Huge_Explosion*/ Blank_Huge_Explosion, 	/*Steel*/ Blank_Steel, 		/*Refined_Steel*/ Blank_Refined_Steel, 	/*Stone*/ Blank_Stone, 			/*Ruby*/ Blank_Ruby, 
+        	/*Diamond*/ Blank_Diamond, 			/*Gold*/ Blank_Gold, 			/*Silver*/ Blank_Silver, 		/*Calcite*/ Blank_Calcite, 			/*Coal*/ Blank_Coal, 			/*Aquamarine*/ Blank_Aquamarine, /*Pixie_Dust*/ Blank_Pixie_Dust,
+        	 /*Emerald*/ Blank_Emerald, 		/*Fossils*/ Blank_Fossils, 			/*Boxes*/ Blank_Boxes, 		/*Unknown*/ Blank_Unknown, 			/*Stone_Bricks*/ Blank_Stone_Bricks, 	/*Brick*/ Blank_Brick, /*Bamboo*/ Blank_Bamboo, 
+        	 /*Sand_Crystal*/ Blank_Sand_Crystal, 	/*Ice_Crystal*/ Blank_Ice_Crystal, 		/*Snow_Crystal*/ Blank_Snow_Crystal, /*Big_Explosion*/ Blank_Big_Explosion, 	/*Packed_Snow*/ Blank_Packed_Snow, 		/*Dirt*/ Blank_Dirt)
     }
 
     function CalculateFrozenLake() {
-        CalculateArea('Frozen Lake', /*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 0, /*Sand*/ 0, /*Rich_Soil*/ 0, /*Blood_Crystal*/ 0, /*Ice*/ 13 / 20, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 0, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 0, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 0, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 0, /*Ruby*/ 0, /*Diamond*/ 0, /*Gold*/ 0, /*Silver*/ 0, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 0, /*Fossils*/ 0, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 1 / 20, /*Snow_Crystal*/ 0, /*Big_Explosion*/ 0, /*Packed_Snow*/ 6 / 20, /*Dirt*/ 0)
+        CalculateArea('Frozen Lake', 'royalblue', 'white',/*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 0, /*Sand*/ 0, /*Rich_Soil*/ 0, /*Blood_Crystal*/ 0, /*Ice*/ 13 / 20, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 0, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 0, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 0, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 0, /*Ruby*/ 0, /*Diamond*/ 0, /*Gold*/ 0, /*Silver*/ 0, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 0, /*Fossils*/ 0, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 1 / 20, /*Snow_Crystal*/ 0, /*Big_Explosion*/ 0, /*Packed_Snow*/ 6 / 20, /*Dirt*/ 0)
     }
 
-    function CalculateDirt() {
-        CalculateArea('Soil Deposit', /*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 0, /*Sand*/ 0, /*Rich_Soil*/ 0, /*Blood_Crystal*/ 0, /*Ice*/ 0, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 0, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 0, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 0, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 0, /*Ruby*/ 0, /*Diamond*/ 0, /*Gold*/ 0, /*Silver*/ 0, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 0, /*Fossils*/ 0, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 0, /*Snow_Crystal*/ 0, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 1)
+    function CalculateAbandonedIsland() {
+    	
+
+        CalculateArea('Abandoned Island', '#654321', 'white',
+        	/*Ugly_Bricks*/ 0, 		/*Old_Box*/ 1/2000, 			/*Valunite*/ 0, 	/*Wood*/ 0, 			/*Sandstone*/ 0, 		/*Sand*/ 0, 
+        	/*Rich_Soil*/ 0, 		/*Blood_Crystal*/ 0, 	/*Ice*/ 0, 			/*Malachite*/ 0, 		/*Grass*/ 0, 			/*Packed_Sand*/ 0, 
+        	/*Blue_Key*/ 0, 		/*Red_Key*/ 0, 			/*Extra_Coins*/ 0, 	/*Explosion*/ 0, 		/*Green_Key*/ 0, 		/*Yellow_Key*/ 0, 
+        	/*Bonus_Coins*/ 0, 		/*Huge_Explosion*/ 0, 	/*Steel*/ 0, 		/*Refined_Steel*/ 0, 	/*Stone*/ 1/5000, 			/*Ruby*/ 0, 
+        	/*Diamond*/ 1/150000, 			/*Gold*/ 1/50000, 			/*Silver*/ 1/20000, 		/*Calcite*/ 1/15000, 			/*Coal*/ 1/5000, 			/*Aquamarine*/ 1/15000, /*Pixie_Dust*/ 1/20000,
+        	 /*Emerald*/ 1/100000, 		/*Fossils*/ 1/200000, 			/*Boxes*/ 1/5000, 		/*Unknown*/ 1/5000, 			/*Stone_Bricks*/ 0, 	/*Brick*/ 0, /*Bamboo*/ 0, 
+        	 /*Sand_Crystal*/ 1/50000, 	/*Ice_Crystal*/ 0, 		/*Snow_Crystal*/ 0, /*Big_Explosion*/ 0, 	/*Packed_Snow*/ 0, 		/*Dirt*/ 0)
     }
 
     function CalculateRichDirt() {
-        CalculateArea('Rich Soil Deposit', /*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 0, /*Sand*/ 0, /*Rich_Soil*/ 1, /*Blood_Crystal*/ 0, /*Ice*/ 0, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 0, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 0, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 0, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 0, /*Ruby*/ 0, /*Diamond*/ 0, /*Gold*/ 0, /*Silver*/ 0, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 0, /*Fossils*/ 0, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 0, /*Snow_Crystal*/ 0, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 0)
+        CalculateArea('Rich Soil Deposit', 'royalblue', 'white',/*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 0, /*Sand*/ 0, /*Rich_Soil*/ 1, /*Blood_Crystal*/ 0, /*Ice*/ 0, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 0, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 0, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 0, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 0, /*Ruby*/ 0, /*Diamond*/ 0, /*Gold*/ 0, /*Silver*/ 0, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 0, /*Fossils*/ 0, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 0, /*Snow_Crystal*/ 0, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 0)
     }
 
     function CalculateSand() {
-        CalculateArea('Sand Pit', /*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 1 / 10, /*Sand*/ 8 / 10, /*Rich_Soil*/ 0, /*Blood_Crystal*/ 0, /*Ice*/ 0, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 1 / 10, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 0, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 0, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 0, /*Ruby*/ 0, /*Diamond*/ 0, /*Gold*/ 0, /*Silver*/ 0, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 0, /*Fossils*/ 0, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 0, /*Snow_Crystal*/ 0, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 0)
+        CalculateArea('Sand Pit', 'royalblue', 'white',/*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 1 / 10, /*Sand*/ 8 / 10, /*Rich_Soil*/ 0, /*Blood_Crystal*/ 0, /*Ice*/ 0, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 1 / 10, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 0, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 0, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 0, /*Ruby*/ 0, /*Diamond*/ 0, /*Gold*/ 0, /*Silver*/ 0, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 0, /*Fossils*/ 0, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 0, /*Snow_Crystal*/ 0, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 0)
     }
 
     function CalculateTree() {
-        CalculateArea('Petrified Tree', /*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 1, /*Sandstone*/ 0, /*Sand*/ 0, /*Rich_Soil*/ 0, /*Blood_Crystal*/ 0, /*Ice*/ 0, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 0, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 0, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 0, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 0, /*Ruby*/ 0, /*Diamond*/ 0, /*Gold*/ 0, /*Silver*/ 0, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 0, /*Fossils*/ 0, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 0, /*Snow_Crystal*/ 0, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 0)
+        CalculateArea('Petrified Tree', 'royalblue', 'white',/*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 1, /*Sandstone*/ 0, /*Sand*/ 0, /*Rich_Soil*/ 0, /*Blood_Crystal*/ 0, /*Ice*/ 0, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 0, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 0, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 0, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 0, /*Ruby*/ 0, /*Diamond*/ 0, /*Gold*/ 0, /*Silver*/ 0, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 0, /*Fossils*/ 0, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 0, /*Snow_Crystal*/ 0, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 0)
     }
 
     function CalculateOldCiv() {
-        CalculateArea('Forgotten Village', /*Ugly_Bricks*/ 1 / 10, /*Old_Box*/ 1 / 20, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 1 / 20, /*Sand*/ 1 / 20, /*Rich_Soil*/ 0, /*Blood_Crystal*/ 0, /*Ice*/ 0, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 1 / 20, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 0, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 0, /*Steel*/ 2 / 10, /*Refined_Steel*/ 1 / 30, /*Stone*/ 1 / 20, /*Ruby*/ 0, /*Diamond*/ 0, /*Gold*/ 0, /*Silver*/ 0, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 0, /*Fossils*/ 0, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 1 / 20, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 0, /*Snow_Crystal*/ 0, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 0)
+        CalculateArea('Forgotten Village', 'royalblue', 'white',/*Ugly_Bricks*/ 1 / 10, /*Old_Box*/ 1 / 20, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 1 / 20, /*Sand*/ 1 / 20, /*Rich_Soil*/ 0, /*Blood_Crystal*/ 0, /*Ice*/ 0, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 1 / 20, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 0, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 0, /*Steel*/ 2 / 10, /*Refined_Steel*/ 1 / 30, /*Stone*/ 1 / 20, /*Ruby*/ 0, /*Diamond*/ 0, /*Gold*/ 0, /*Silver*/ 0, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 0, /*Fossils*/ 0, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 1 / 20, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 0, /*Snow_Crystal*/ 0, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 0)
     }
 
     function CalculateOldShaft() {
-        CalculateArea('Abandoned Mine Shaft', /*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 100 / 1000, /*Sand*/ 0, /*Rich_Soil*/ 0, /*Blood_Crystal*/ 0, /*Ice*/ 0, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 0, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 8 / 1000, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 2 / 1000, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 10 / 1000, /*Ruby*/ 50 / 1000, /*Diamond*/ 25 / 1000, /*Gold*/ 0, /*Silver*/ 20 / 1000, /*Calcite*/ 0, /*Coal*/ 250 / 1000, /*Aquamarine*/ 150 / 1000, /*Pixie_Dust*/ 0, /*Emerald*/ 25 / 1000, /*Fossils*/ 10 / 1000, /*Boxes*/ 0, /*Unknown*/ 25 / 1000, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 0, /*Snow_Crystal*/ 0, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 0)
+        CalculateArea('Abandoned Mine Shaft', 'royalblue', 'white',/*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 100 / 1000, /*Sand*/ 0, /*Rich_Soil*/ 0, /*Blood_Crystal*/ 0, /*Ice*/ 0, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 0, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 8 / 1000, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 2 / 1000, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 10 / 1000, /*Ruby*/ 50 / 1000, /*Diamond*/ 25 / 1000, /*Gold*/ 0, /*Silver*/ 20 / 1000, /*Calcite*/ 0, /*Coal*/ 250 / 1000, /*Aquamarine*/ 150 / 1000, /*Pixie_Dust*/ 0, /*Emerald*/ 25 / 1000, /*Fossils*/ 10 / 1000, /*Boxes*/ 0, /*Unknown*/ 25 / 1000, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 0, /*Snow_Crystal*/ 0, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 0)
     }
 
     function CalculateDiamondOcean() {
-        CalculateArea('Frozen Diamond Ocean', /*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 0, /*Sand*/ 0, /*Rich_Soil*/ 0, /*Blood_Crystal*/ 0, /*Ice*/ 8 / 10, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 0, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 0, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 0, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 0, /*Ruby*/ 0, /*Diamond*/ 1 / 10, /*Gold*/ 0, /*Silver*/ 0, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 0, /*Fossils*/ 0, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 25 / 1000, /*Snow_Crystal*/ 75 / 1000, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 0)
+        CalculateArea('Frozen Diamond Ocean', 'royalblue', 'white',/*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 0, /*Sand*/ 0, /*Rich_Soil*/ 0, /*Blood_Crystal*/ 0, /*Ice*/ 8 / 10, /*Malachite*/ 0, /*Grass*/ 0, /*Packed_Sand*/ 0, /*Blue_Key*/ 0, /*Red_Key*/ 0, /*Extra_Coins*/ 0, /*Explosion*/ 0, /*Green_Key*/ 0, /*Yellow_Key*/ 0, /*Bonus_Coins*/ 0, /*Huge_Explosion*/ 0, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 0, /*Ruby*/ 0, /*Diamond*/ 1 / 10, /*Gold*/ 0, /*Silver*/ 0, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 0, /*Fossils*/ 0, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 0, /*Ice_Crystal*/ 25 / 1000, /*Snow_Crystal*/ 75 / 1000, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 0)
     }
 
     function CalculateLucky() {
-        CalculateArea('Lucky Zone', /*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 0, /*Sand*/ 0, /*Rich_Soil*/ 1 / 10, /*Blood_Crystal*/ 0, /*Ice*/ 0, /*Malachite*/ 0, /*Grass*/ 75 / 100, /*Packed_Sand*/ 0, /*Blue_Key*/ 1 / 500, /*Red_Key*/ 1 / 25, /*Extra_Coins*/ 1 / 200, /*Explosion*/ 0, /*Green_Key*/ 1 / 10, /*Yellow_Key*/ 1 / 100, /*Bonus_Coins*/ 1 / 500, /*Huge_Explosion*/ 0, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 0, /*Ruby*/ 1 / 100, /*Diamond*/ 1 / 1000, /*Gold*/ 1 / 50, /*Silver*/ 1 / 25, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 1 / 750, /*Fossils*/ 1 / 5000, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 1 / 500, /*Ice_Crystal*/ 1 / 500, /*Snow_Crystal*/ 1 / 500, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 0)
+        CalculateArea('Lucky Zone', 'royalblue', 'white',/*Ugly_Bricks*/ 0, /*Old_Box*/ 0, /*Valunite*/ 0, /*Wood*/ 0, /*Sandstone*/ 0, /*Sand*/ 0, /*Rich_Soil*/ 1 / 10, /*Blood_Crystal*/ 0, /*Ice*/ 0, /*Malachite*/ 0, /*Grass*/ 75 / 100, /*Packed_Sand*/ 0, /*Blue_Key*/ 1 / 500, /*Red_Key*/ 1 / 25, /*Extra_Coins*/ 1 / 200, /*Explosion*/ 0, /*Green_Key*/ 1 / 10, /*Yellow_Key*/ 1 / 100, /*Bonus_Coins*/ 1 / 500, /*Huge_Explosion*/ 0, /*Steel*/ 0, /*Refined_Steel*/ 0, /*Stone*/ 0, /*Ruby*/ 1 / 100, /*Diamond*/ 1 / 1000, /*Gold*/ 1 / 50, /*Silver*/ 1 / 25, /*Calcite*/ 0, /*Coal*/ 0, /*Aquamarine*/ 0, /*Pixie_Dust*/ 0, /*Emerald*/ 1 / 750, /*Fossils*/ 1 / 5000, /*Boxes*/ 0, /*Unknown*/ 0, /*Stone_Bricks*/ 0, /*Brick*/ 0, /*Bamboo*/ 0, /*Sand_Crystal*/ 1 / 500, /*Ice_Crystal*/ 1 / 500, /*Snow_Crystal*/ 1 / 500, /*Big_Explosion*/ 0, /*Packed_Snow*/ 0, /*Dirt*/ 0)
     }
 
-    function CalculateArea(AreaN, Ugly_Bricks, Old_Box, Valunite, Wood, Sandstone, Sand, Rich_Soil, Blood_Crystal, Ice, Malachite, Grass, Packed_Sand, Blue_Key, Red_Key, Extra_Coins, Explosion, Green_Key, Yellow_Key, Bonus_Coins, Huge_Explosion, Steel, Refined_Steel, Stone, Ruby, Diamond, Gold, Silver, Calcite, Coal, Aquamarine, Pixie_Dust, Emerald, Fossils, Boxes, Unknown, Stone_Bricks, Brick, Bamboo, Sand_Crystal, Ice_Crystal, Snow_Crystal, Big_Explosion, Packed_Snow, Dirt) {
+    function CalculateArea(AreaN, AreaN_BGC, AreaN_TC, Ugly_Bricks, Old_Box, Valunite, Wood, Sandstone, Sand, Rich_Soil, Blood_Crystal, Ice, Malachite, Grass, Packed_Sand, Blue_Key, Red_Key, Extra_Coins, Explosion, Green_Key, Yellow_Key, Bonus_Coins, Huge_Explosion, Steel, Refined_Steel, Stone, Ruby, Diamond, Gold, Silver, Calcite, Coal, Aquamarine, Pixie_Dust, Emerald, Fossils, Boxes, Unknown, Stone_Bricks, Brick, Bamboo, Sand_Crystal, Ice_Crystal, Snow_Crystal, Big_Explosion, Packed_Snow, Dirt) {
         AreaName = AreaN;
+        AreaName_BGC = AreaN_BGC;
+        AreaName_TC = AreaN_TC;
         R_Ugly_Bricks = 1 - Ugly_Bricks;
         R_Old_Box = R_Ugly_Bricks - Old_Box;
         R_Valunite = R_Old_Box - Valunite;

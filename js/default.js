@@ -211,6 +211,7 @@ setInterval(function(){saveState()},1000)
         z++;
         FloorTop += FloorTopAddAmount;
     }
+    $('.Block').find('img').data('Name','Wood')
 
     $('.Floor').last().empty().remove();
     constantDamage = 10;
@@ -237,7 +238,7 @@ setInterval(function(){saveState()},1000)
         }
         constantDamageR = constantDamage;
 
-    }, 10000)
+    }, 10)
 
     $('.Tower').click(function() {
 
@@ -265,7 +266,7 @@ setInterval(function(){saveState()},1000)
 
     function NewBlock() {
         startingHP = startingHP * 1.01
-        constantDamage = constantDamage ;
+        constantDamage = constantDamage * 1.01;
         clickDamage = clickDamage * 1.01;
         BlockHP = startingHP;
         
@@ -307,10 +308,16 @@ setInterval(function(){saveState()},1000)
         //$('.AreaName').css({background:AreaName_BGC,color:AreaName_TC})
         for (var i = 1; i <= 25; i++) {
             $('.Floor_' + i).find('img').each(function(v,e){
-            	$(this).attr('src', $($('.Floor_' + (i + 1)).find('img')[v]).attr('src')).data('Name', $($('.Floor_' + (i + 1)).find('img')[v]).data('Name'))
+            	
+            	if(v == 21 || v == 22 || v == 29 || v == 30 || v == 53 || v == 54 || v == 61 || v == 62 || v == 42 || v == 43 || v == 46 || v == 47 || v == 58 || v == 59 || v == 62 || v == 63  ){
+					$(this).attr('src', $($('.Floor_' + (i + 1)).find('img')[v]).attr('src'))
+            	}else if(i == 1){
+$(this).attr('src', 'img/'+$($('.Floor_' + (i + 1)).find('img')[v]).data('Name').replace(/_/g," ")+'.png')
+            	}
+            	$(this).data('Name', $($('.Floor_' + (i + 1)).find('img')[v]).data('Name'))
             })
             
-            $('.Floor_' + i).data("Name",$('.Floor_' + (i + 1)).data("Name"))
+            
         }
         $('.Floor_25').find('img').each(function(){
 	        GenerateNextBlock();
@@ -379,7 +386,7 @@ Blank_Packed_Snow = 0 * Blank_Packed_Snow_M;
 Blank_Dirt = 0 * Blank_Dirt_M;
 SetMain = 1 - (Blank_Ugly_Bricks + Blank_Old_Box + Blank_Valunite + Blank_Wood + Blank_Sandstone + Blank_Sand + Blank_Rich_Soil + Blank_Blood_Crystal + Blank_Ice + Blank_Malachite + Blank_Grass + Blank_Packed_Sand + Blank_Blue_Key + Blank_Red_Key + Blank_Extra_Coins + Blank_Explosion + Blank_Green_Key + Blank_Yellow_Key + Blank_Bonus_Coins + Blank_Huge_Explosion + Blank_Steel + Blank_Refined_Steel + Blank_Stone + Blank_Ruby + Blank_Diamond + Blank_Gold + Blank_Silver + Blank_Calcite + Blank_Coal + Blank_Aquamarine + Blank_Pixie_Dust + Blank_Emerald + Blank_Fossils + Blank_Boxes + Blank_Unknown + Blank_Stone_Bricks + Blank_Brick + Blank_Bamboo + Blank_Sand_Crystal + Blank_Ice_Crystal + Blank_Snow_Crystal + Blank_Big_Explosion + Blank_Packed_Snow + Blank_Dirt)
 //example
-Blank_Bamboo = SetMain
+Blank_Rich_Soil = SetMain
         CalculateArea('Giant Bamboo Tree', '#654321', 'white',
         	/*Ugly_Bricks*/ Blank_Ugly_Bricks, 		/*Old_Box*/ Blank_Old_Box, 			/*Valunite*/ Blank_Valunite, 	/*Wood*/ Blank_Wood, 			/*Sandstone*/ Blank_Sandstone, 		/*Sand*/ Blank_Sand, 
         	/*Rich_Soil*/ Blank_Rich_Soil, 		/*Blood_Crystal*/ Blank_Blood_Crystal, 	/*Ice*/ Blank_Ice, 			/*Malachite*/ Blank_Malachite, 		/*Grass*/ Blank_Grass, 			/*Packed_Sand*/ Blank_Packed_Sand, 

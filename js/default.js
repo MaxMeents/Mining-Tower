@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	Num_Of_Floors = 15;
 	  Ugly_Bricks_Amount = 0;
     Old_Box_Amount = 0;
     Valunite_Amount = 0;
@@ -202,11 +203,11 @@ setInterval(function(){saveState()},1000)
     	$('.Resources,.Resource,.CloseWindow').css({display:'none'})
     })
 
-    $('.Floor').duplicate(25).appendTo('.Tower');
+    $('.Floor').duplicate(Num_Of_Floors).appendTo('.Tower');
     z = 1;
     FloorTop = 0;
     FloorTopAddAmount = 23;
-    for (var i = 0; i < 25; i++) {
+    for (var i = 0; i < Num_Of_Floors; i++) {
         $($('.Floor')[i]).addClass('Floor_' + z).css({ top: FloorTop, zIndex: 99 - z })
         z++;
         FloorTop += FloorTopAddAmount;
@@ -306,7 +307,7 @@ setInterval(function(){saveState()},1000)
 
         $('.AreaName').html(AreaName)
         //$('.AreaName').css({background:AreaName_BGC,color:AreaName_TC})
-        for (var i = 1; i <= 25; i++) {
+        for (var i = 1; i <= Num_Of_Floors; i++) {
             $('.Floor_' + i).find('img').each(function(v,e){
             	
             	if(v == 21 || v == 22 || v == 29 || v == 30 || v == 53 || v == 54 || v == 61 || v == 62 || v == 42 || v == 43 || v == 46 || v == 47 || v == 58 || v == 59 || v == 62 || v == 63  ){
@@ -319,7 +320,7 @@ $(this).attr('src', 'img/'+$($('.Floor_' + (i + 1)).find('img')[v]).data('Name')
             
             
         }
-        $('.Floor_25').find('img').each(function(){
+        $('.Floor_'+Num_Of_Floors).find('img').each(function(){
 	        GenerateNextBlock();
     	    NewBlockImg = Block_Name;
 	

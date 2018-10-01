@@ -1,15 +1,15 @@
 body{background: royalblue;background-image: url("../img/background.jpg");background-size: 100% 200%}
+
 .Tower{
 	position: relative;
 	margin-left: 170px;
 	background: transparent;
 	width:400px;
 	height:800px;
-	overflow: hidden;
 	top:100px;
 	
 }
-.AreaName{background:white;width:500px;position: absolute;top:0px;text-align:center;color:black;font-size:29px;border-radius:25px;z-index:105;left:-50px;height:100px;line-height:100px;background-image:url("../img/ffb.png");background-size:492px 99px;}
+.AreaName{background:black;width:500px;position: absolute;top:24px;text-align:center;color:red;font-size:29px;border-radius:25px;z-index:105;left:-50px;height:50px;line-height:50px;background-size:492px 99px;}
 .Chunk{
 	position: absolute;
 }
@@ -112,7 +112,26 @@ position: absolute;top: 96px;left: 0px;z-index: 151;;;;;
 .startingHP{position: absolute;left: 65px;top: 29px;color: white;font-size: 16px;;;;;;
 
 }
-.Resource{
+.HCIsTitle,.ResourceTitle{
+	font-size: 30px;
+	    width: 100%;
+    text-align: center;
+    background: black;
+    color: red;
+}
+.ResourcesClick > img{
+	width:70px;
+	position:absolute;
+	top:100px;
+	left:-60px;
+}
+.PlantClick > img{
+	width:70px;
+	position:absolute;
+	top:100px;
+	right:-60px;
+}
+.Resource,.HCItemSelected{
 	top: 70%;
 	width: 90%;
 	height: 25%;
@@ -120,13 +139,13 @@ position: absolute;top: 96px;left: 0px;z-index: 151;;;;;
 	background: white;
 	border: 8px solid red;
 	border-radius: 20px;
-	position: absolute;
+	position: fixed;
 	z-index: 120;
 	overflow: hidden;
 	
 }
 
-.Resources{
+.Resources,.HCIs{
 	width: 95%;
 	height: 60%;
 	top: 2%;
@@ -134,12 +153,13 @@ position: absolute;top: 96px;left: 0px;z-index: 151;;;;;
 	background: white;
 	border: 8px solid red;
 	border-radius: 20px;
-	position: absolute;
+	position: fixed;
 	z-index: 120;
 	overflow: scroll;
 	
 }
-.ResourceBlock{
+
+.ResourceBlock,.HCI{
 	width: 140px;
 	height: 40px;
 	margin: 10px;
@@ -150,7 +170,7 @@ position: absolute;top: 96px;left: 0px;z-index: 151;;;;;
 	background: royalblue;
 	border-radius: 15px;
 }
-.ResourceBlock > img{
+.ResourceBlock > img,.HCI > img{
 	margin-left:3px;
 	width:40px;
 	height:40px;
@@ -158,7 +178,7 @@ position: absolute;top: 96px;left: 0px;z-index: 151;;;;;
 .Clear{
 	clear:both;
 }
-.ResourceBlock > .Title{
+.ResourceBlock > .Title,.HCI > .Title{
 	position: absolute;
 	left:50px;
 	line-height: 60px;
@@ -166,7 +186,7 @@ position: absolute;top: 96px;left: 0px;z-index: 151;;;;;
 	font-size: 13px
 
 }
-.ResourceBlock > .Amount{
+.ResourceBlock > .Amount,.HCI > .Amount{
 	position: absolute;
 	left:110px;
 	top:-3px;

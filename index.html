@@ -1,37 +1,281 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="css/css.css">
+<link rel="stylesheet" type="text/css" href="css/css.css?=1.2">
 <script src="js/jq.js"></script>
-<script src="js/default.js?=1.2"></script>
+<script src="js/default.js?=1.4"></script>
 <title>Mining Tower</title>
 <meta name="viewport" content="width=device-width, initial-scale=0.70, maximum-scale=1.0, user-scalable=0">
 
 <body>
     <img src="img/close-window.png" alt="" class="CloseWindow">
+    <div class="HCItemSelected">
+        <img src="img/HC/Apple.png" alt="" class="HCItemSelectedImage">
+    </div>
+    <div class="HCIs">
+        <div class="HCIsTitle">Tree Fruits</div>
+        <div class="Apple HCI">
+            <div class="Title">Apple</div>
+            <div class="Amount">0</div><img title="Apple" src="img/HC/Apple.png" alt=""></div>
+        <div class="Apricot HCI">
+            <div class="Title">Apricot</div>
+            <div class="Amount">0</div><img title="Apricot" src="img/HC/Apricot.png" alt=""></div>
+        <div class="Cherry HCI">
+            <div class="Title">Cherry</div>
+            <div class="Amount">0</div><img title="Cherry" src="img/HC/Cherry.png" alt=""></div>
+        <div class="Orange HCI">
+            <div class="Title">Orange</div>
+            <div class="Amount">0</div><img title="Orange" src="img/HC/Orange.png" alt=""></div>
+        <div class="Peach HCI">
+            <div class="Title">Peach</div>
+            <div class="Amount">0</div><img title="Peach" src="img/HC/Peach.png" alt=""></div>
+        <div class="Pomegranate HCI">
+            <div class="Title">Pomegranate</div>
+            <div class="Amount">0</div><img title="Pomegranate" src="img/HC/Pomegranate.png" alt=""></div>
+        <div class="Clear"></div>
+        <div class="Lumber HCI">
+            <div class="Title">Lumber</div>
+            <div class="Amount">0</div><img title="Lumber" src="img/HC/Log.png" alt=""></div>
+        <div class="Clear"></div>
+        <div class="HCIsTitle">Ground Fruits</div>
+        <div class="Ancient_Fruit HCI">
+            <div class="Title">Ancient Fruit</div>
+            <div class="Amount">0</div><img title="Ancient Fruit" src="img/HC/Ancient_Fruit.png" alt=""></div>
+        <div class="Blueberry HCI">
+            <div class="Title">Blueberry</div>
+            <div class="Amount">0</div><img title="Blueberry" src="img/HC/Blueberry.png" alt=""></div>
+        <div class="Cranberry HCI">
+            <div class="Title">Cranberry</div>
+            <div class="Amount">0</div><img title="Cranberry" src="img/HC/Cranberry.png" alt=""></div>
+        <div class="Grape HCI">
+            <div class="Title">Grape</div>
+            <div class="Amount">0</div><img title="Grape" src="img/HC/Grape.png" alt=""></div>
+        <div class="Melon HCI">
+            <div class="Title">Melon</div>
+            <div class="Amount">0</div><img title="Melon" src="img/HC/Melon.png" alt=""></div>
+        <div class="Starfruit HCI">
+            <div class="Title">Starfruit</div>
+            <div class="Amount">0</div><img title="Starfruit" src="img/HC/Starfruit.png" alt=""></div>
+        <div class="Strawberry HCI">
+            <div class="Title">Strawberry</div>
+            <div class="Amount">0</div><img title="Strawberry" src="img/HC/Strawberry.png" alt=""></div>
+        <div class="Gem_Berry HCI">
+            <div class="Title">Gem Berry</div>
+            <div class="Amount">0</div><img title="Gem Berry" src="img/HC/Sweet_Gem_Berry.png" alt=""></div>
+        <div class="Tomato HCI">
+            <div class="Title">Tomato</div>
+            <div class="Amount">0</div><img title="Tomato" src="img/HC/Tomato.png" alt=""></div>
+        <div class="Clear"></div>
+        <div class="HCIsTitle">Vegetables</div>
+        <div class="Amaranth HCI">
+            <div class="Title">Amaranth</div>
+            <div class="Amount">0</div><img title="Amaranth" src="img/HC/Amaranth.png" alt=""></div>
+        <div class="Artichoke HCI">
+            <div class="Title">Artichoke</div>
+            <div class="Amount">0</div><img title="Artichoke" src="img/HC/Artichoke.png" alt=""></div>
+        <div class="Beet HCI">
+            <div class="Title">Beet</div>
+            <div class="Amount">0</div><img title="Beet" src="img/HC/Beet.png" alt=""></div>
+        <div class="Bok_Choy HCI">
+            <div class="Title">Bok Choy</div>
+            <div class="Amount">0</div><img title="Bok Choy" src="img/HC/Bok_Choy.png" alt=""></div>
+        <div class="Cauliflower HCI">
+            <div class="Title">Cauliflower</div>
+            <div class="Amount">0</div><img title="Cauliflower" src="img/HC/Cauliflower.png" alt=""></div>
+        <div class="Corn HCI">
+            <div class="Title">Corn</div>
+            <div class="Amount">0</div><img title="Corn" src="img/HC/Corn.png" alt=""></div>
+        <div class="Eggplant HCI">
+            <div class="Title">Eggplant</div>
+            <div class="Amount">0</div><img title="Eggplant" src="img/HC/Eggplant.png" alt=""></div>
+        <div class="Garlic HCI">
+            <div class="Title">Garlic</div>
+            <div class="Amount">0</div><img title="Garlic" src="img/HC/Garlic.png" alt=""></div>
+        <div class="Hops HCI">
+            <div class="Title">Hops</div>
+            <div class="Amount">0</div><img title="Hops" src="img/HC/Hops.png" alt=""></div>
+        <div class="Hot_Pepper HCI">
+            <div class="Title">Hot Pepper</div>
+            <div class="Amount">0</div><img title="Hot Pepper" src="img/HC/Hot_Pepper.png" alt=""></div>
+        <div class="Kale HCI">
+            <div class="Title">Kale</div>
+            <div class="Amount">0</div><img title="Kale" src="img/HC/Kale.png" alt=""></div>
+        <div class="Parsnip HCI">
+            <div class="Title">Parsnip</div>
+            <div class="Amount">0</div><img title="Parsnip" src="img/HC/Parsnip.png" alt=""></div>
+        <div class="Potato HCI">
+            <div class="Title">Potato</div>
+            <div class="Amount">0</div><img title="Potato" src="img/HC/Potato.png" alt=""></div>
+        <div class="Pumpkin HCI">
+            <div class="Title">Pumpkin</div>
+            <div class="Amount">0</div><img title="Pumpkin" src="img/HC/Pumpkin.png" alt=""></div>
+        <div class="Radish HCI">
+            <div class="Title">Radish</div>
+            <div class="Amount">0</div><img title="Radish" src="img/HC/Radish.png" alt=""></div>
+        <div class="Red_Cabbage HCI">
+            <div class="Title">Red Cabbage</div>
+            <div class="Amount">0</div><img title="Red Cabbage" src="img/HC/Red_Cabbage.png" alt=""></div>
+        <div class="Rhubarb HCI">
+            <div class="Title">Rhubarb</div>
+            <div class="Amount">0</div><img title="Rhubarb" src="img/HC/Rhubarb.png" alt=""></div>
+        <div class="Wheat HCI">
+            <div class="Title">Wheat</div>
+            <div class="Amount">0</div><img title="Wheat" src="img/HC/Wheat.png" alt=""></div>
+        <div class="Snow_Yam HCI">
+            <div class="Title">Snow Yam</div>
+            <div class="Amount">0</div><img title="Snow Yam" src="img/HC/Snow_Yam.png" alt=""></div>
+        <div class="Clear"></div>
+        <div class="HCIsTitle">Flowers</div>
+        <div class="Blue_Jazz HCI">
+            <div class="Title">Blue Jazz</div>
+            <div class="Amount">0</div><img title="Blue Jazz" src="img/HC/Blue_Jazz.png" alt=""></div>
+        <div class="Fairy_Rose HCI">
+            <div class="Title">Fairy Rose</div>
+            <div class="Amount">0</div><img title="Fairy Rose" src="img/HC/Fairy_Rose.png" alt=""></div>
+        <div class="Poppy HCI">
+            <div class="Title">Poppy</div>
+            <div class="Amount">0</div><img title="Poppy" src="img/HC/Poppy.png" alt=""></div>
+        <div class="Spangle HCI">
+            <div class="Title">Spangle</div>
+            <div class="Amount">0</div><img title="Spangle" src="img/HC/Summer_Spangle.png" alt=""></div>
+        <div class="Sunflower HCI">
+            <div class="Title">Sunflower</div>
+            <div class="Amount">0</div><img title="Sunflower" src="img/HC/Sunflower.png" alt=""></div>
+        <div class="Tulip HCI">
+            <div class="Title">Tulip</div>
+            <div class="Amount">0</div><img title="Tulip" src="img/HC/Tulip.png" alt=""></div>
+        <div class="Clear"></div>
+        <div class="HCIsTitle">Animals</div>
+        <div class="Chicken HCI">
+            <div class="Title">Chicken</div>
+            <div class="Amount">0</div><img title="Chicken" src="img/HC/White_Chicken.png" alt=""></div>
+        <div class="Egg HCI">
+            <div class="Title">Egg</div>
+            <div class="Amount">0</div><img title="Egg" src="img/HC/Egg.png" alt=""></div>
+        <div class="Onyx_Chicken HCI">
+            <div class="Title">Onyx Chicken</div>
+            <div class="Amount">0</div><img title="Onyx Chicken" src="img/HC/Black_Chicken.png" alt=""></div>
+        <div class="Onyx_Egg HCI">
+            <div class="Title">Onyx Egg</div>
+            <div class="Amount">0</div><img title="Onyx Egg" src="img/HC/Black_Egg.png" alt=""></div>
+        <div class="Golden_Chicken HCI">
+            <div class="Title">Golden Chicken</div>
+            <div class="Amount">0</div><img title="Golden Chicken" src="img/HC/Golden_Chicken.png" alt=""></div>
+        <div class="Golden_Egg HCI">
+            <div class="Title">Golden Egg</div>
+            <div class="Amount">0</div><img title="Golden Egg" src="img/HC/Golden_Egg.png" alt=""></div>
+        <div class="Brown_Cow HCI">
+            <div class="Title">Brown Cow</div>
+            <div class="Amount">0</div><img title="Brown Cow" src="img/HC/Brown_Cow.png" alt=""></div>
+        <div class="Chocolate_Milk HCI">
+            <div class="Title">Chocolate Milk</div>
+            <div class="Amount">0</div><img title="Chocolate Milk" src="img/HC/Chocolate_Milk.png" alt=""></div>
+        <div class="White_Cow HCI">
+            <div class="Title">White Cow</div>
+            <div class="Amount">0</div><img title="White Cow" src="img/HC/White_Cow.png" alt=""></div>
+        <div class="White_Milk HCI">
+            <div class="Title">White Milk</div>
+            <div class="Amount">0</div><img title="White Milk" src="img/HC/Milk.png" alt=""></div>
+        <div class="White_Sheep HCI">
+            <div class="Title">White Sheep</div>
+            <div class="Amount">0</div><img title="White Sheep" src="img/HC/White_Sheep.png" alt=""></div>
+        <div class="Wool HCI">
+            <div class="Title">Wool</div>
+            <div class="Amount">0</div><img title="Wool" src="img/HC/Wool.png" alt=""></div>
+        <div class="Black_Sheep HCI">
+            <div class="Title">Black Sheep</div>
+            <div class="Amount">0</div><img title="Black Sheep" src="img/HC/Black_Sheep.png" alt=""></div>
+        <div class="Void_Wool HCI">
+            <div class="Title">Void Wool</div>
+            <div class="Amount">0</div><img title="Void Wool" src="img/HC/Black_Wool.png" alt=""></div>
+        <div class="Mythril_Sheep HCI">
+            <div class="Title">Mythril Sheep</div>
+            <div class="Amount">0</div><img title="Mythril Sheep" src="img/HC/Mythril_Sheep.png" alt=""></div>
+        <div class="Mythril_Wool HCI">
+            <div class="Title">Mythril Wool</div>
+            <div class="Amount">0</div><img title="Mythril Wool" src="img/HC/Mythril_Wool.png" alt=""></div>
+        <div class="Clear"></div>
+        <div class="HCIsTitle">Makers</div>
+        <div class="Cherry_Jammer HCI">
+            <div class="Title">Cherry Jammer</div>
+            <div class="Amount">0</div><img title="Cherry Jammer" src="img/HC/Cherry_Jam_Maker.png" alt=""></div>
+        <div class="Cherry_Jam HCI">
+            <div class="Title">Cherry Jam</div>
+            <div class="Amount">0</div><img title="Cherry Jam" src="img/HC/Cherry_Jam.png" alt=""></div>
+        <div class="Blueberry_Jammer HCI">
+            <div class="Title">BlueB. Jammer</div>
+            <div class="Amount">0</div><img title="Blueberry Jammer" src="img/HC/Blueberry_Jam_Maker.png" alt=""></div>
+        <div class="Blueberry_Jam HCI">
+            <div class="Title">Blueberry Jam</div>
+            <div class="Amount">0</div><img title="Blueberry Jam" src="img/HC/Blueberry_Jam.png" alt=""></div>
+        <div class="Coal_Maker HCI">
+            <div class="Title">Coal Maker</div>
+            <div class="Amount">0</div><img title="Coal Maker" src="img/HC/Charcoal_Bin.png" alt=""></div>
+        <div class="Coal HCI">
+            <div class="Title">Coal</div>
+            <div class="Amount">0</div><img title="Coal" src="img/HC/Coal.png" alt=""></div>
+        <div class="Bee_House HCI">
+            <div class="Title">Bee House</div>
+            <div class="Amount">0</div><img title="Bee House" src="img/HC/Bee_House.png" alt=""></div>
+        <div class="Honey HCI">
+            <div class="Title">Honey</div>
+            <div class="Amount">0</div><img title="Honey" src="img/HC/Honey.png" alt=""></div>
+        <div class="Keg HCI">
+            <div class="Title">Keg</div>
+            <div class="Amount">0</div><img title="Keg" src="img/HC/Keg.png" alt=""></div>
+        <div class="Beer HCI">
+            <div class="Title">Beer</div>
+            <div class="Amount">0</div><img title="Beer" src="img/HC/Beer.png" alt=""></div>
+    </div>
     <div class="Resource">
         <img src="img/Ugly Bricks.png" alt="" class="ResourceImage">
     </div>
     <div class="Resources">
+        <div class="ResourceTitle">Soil</div>
         <div class="Dirt ResourceBlock">
             <div class="Title">Dirt</div>
             <div class="Amount">0</div><img title="Dirt" src="img/Dirt.png" alt=""></div>
         <div class="Rich_Soil ResourceBlock">
             <div class="Title">Rich Soil</div>
             <div class="Amount">0</div><img title="Rich Soil" src="img/Rich Soil.png" alt=""></div>
-        <div class="Grass ResourceBlock">
-            <div class="Title">Grass</div>
-            <div class="Amount">0</div><img title="Grass" src="img/Grass.png" alt=""></div>
+        <div class="Very_Rich_Soil ResourceBlock">
+            <div class="Title">Very Rich Soil</div>
+            <div class="Amount">0</div><img title="Very Rich Soil" src="img/Very Rich Soil.png" alt=""></div>
+        <div class="Extremly_rich_soil ResourceBlock">
+            <div class="Title">Extremly rich soil</div>
+            <div class="Amount">0</div><img title="Extremly rich soil" src="img/Extremly rich soil.png" alt=""></div>
         <div class="Clear"></div>
-        <div class="Valunite ResourceBlock">
-            <div class="Title">Oak</div>
-            <div class="Amount">0</div><img title="Valunite" src="img/Valunite.png" alt=""></div>
+        <div class="ResourceTitle">Ice</div>
+        <div class="Packed_Snow ResourceBlock">
+            <div class="Title">Packed Snow</div>
+            <div class="Amount">0</div><img title="Packed Snow" src="img/Packed Snow.png" alt=""></div>        
+        <div class="Ice ResourceBlock">
+            <div class="Title">Ice</div>
+            <div class="Amount">0</div><img title="Ice" src="img/Ice.png" alt=""></div>
+        
+        <div class="Hardened_Ice ResourceBlock">
+            <div class="Title">Hardened Ice</div>
+            <div class="Amount">0</div><img title="Hardened Ice" src="img/Hardened Ice.png" alt=""></div>
+        <div class="Compressed_Ice ResourceBlock">
+            <div class="Title">Compressed Ice</div>
+            <div class="Amount">0</div><img title="Compressed Ice" src="img/Compressed Ice.png" alt=""></div>
+        <div class="Clear"></div>
+
+        <div class="ResourceTitle">Trees</div>
+        <div class="Wood ResourceBlock">
+            <div class="Title">Ceder</div>
+            <div class="Amount">0</div><img title="Wood" src="img/Wood.png" alt=""></div>
         <div class="Bamboo ResourceBlock">
             <div class="Title">Bamboo</div>
             <div class="Amount">0</div><img title="Bamboo" src="img/Bamboo.png" alt=""></div>
-        <div class="Wood ResourceBlock">
-            <div class="Title">Wood</div>
-            <div class="Amount">0</div><img title="Wood" src="img/Wood.png" alt=""></div>
+        
+        <div class="Valunite ResourceBlock">
+            <div class="Title">Valunite</div>
+            <div class="Amount">0</div><img title="Valunite" src="img/Valunite.png" alt=""></div>
+        <div class="Dark_Valunite ResourceBlock">
+            <div class="Title">Dark Valunite</div>
+            <div class="Amount">0</div><img title="Dark Valunite" src="img/Dark Valunite.png" alt=""></div>
         <div class="Clear"></div>
+        <div class="ResourceTitle">Sand</div>
         <div class="Sandstone ResourceBlock">
             <div class="Title">Sandstone</div>
             <div class="Amount">0</div><img title="Sandstone" src="img/Sandstone.png" alt=""></div>
@@ -42,22 +286,48 @@
             <div class="Title">Packed Sand</div>
             <div class="Amount">0</div><img title="Packed Sand" src="img/Packed Sand.png" alt=""></div>
         <div class="Clear"></div>
+        <div class="ResourceTitle">Coins</div>
         <div class="Extra_Coins ResourceBlock">
             <div class="Title">Extra Coins</div>
             <div class="Amount">0</div><img title="Extra Coins" src="img/Extra Coins.png" alt=""></div>
         <div class="Bonus_Coins ResourceBlock">
             <div class="Title">Bonus Coins</div>
             <div class="Amount">0</div><img title="Bonus Coins" src="img/Bonus Coins.png" alt=""></div>
-        <div class="Explosion ResourceBlock">
-            <div class="Title">Explosion</div>
-            <div class="Amount">0</div><img title="Explosion" src="img/Explosion.png" alt=""></div>
-        <div class="Huge_Explosion ResourceBlock">
-            <div class="Title">Huge Explosion</div>
-            <div class="Amount">0</div><img title="Huge Explosion" src="img/Huge Explosion.png" alt=""></div>
-        <div class="Big_Explosion ResourceBlock">
-            <div class="Title">Big Explosion</div>
-            <div class="Amount">0</div><img title="Big Explosion" src="img/Big Explosion.png" alt=""></div>
         <div class="Clear"></div>
+        <div class="ResourceTitle">Boxes</div>
+        <div class="Boxes ResourceBlock">
+            
+            <div class="Title">Boxes</div>
+            <div class="Amount">0</div><img title="Boxes" src="img/Boxes.png" alt=""></div>
+        <div class="Old_Box ResourceBlock">
+            <div class="Title">Old Box</div>
+            <div class="Amount">0</div><img title="Old Box" src="img/Old Box.png" alt=""></div>
+        <div class="Unknown ResourceBlock">
+            <div class="Title">Unknown</div>
+            <div class="Amount">0</div><img title="Unknown" src="img/Unknown.png" alt=""></div>
+        <div class="Orange_Box ResourceBlock">
+            <div class="Title">Orange Box</div>
+            <div class="Amount">0</div><img title="Orange Box" src="img/Orange Box.png" alt=""></div>
+        <div class="Green_Box ResourceBlock">
+            <div class="Title">Green Box</div>
+            <div class="Amount">0</div><img title="Green Box" src="img/Green Box.png" alt=""></div>
+        <div class="Cyan_Box ResourceBlock">
+            <div class="Title">Cyan Box</div>
+            <div class="Amount">0</div><img title="Cyan Box" src="img/Cyan Box.png" alt=""></div>
+        <div class="Red_Box ResourceBlock">
+            <div class="Title">Red Box</div>
+            <div class="Amount">0</div><img title="Red Box" src="img/Red Box.png" alt=""></div>
+        <div class="Magenta_Box ResourceBlock">
+            <div class="Title">Magenta Box</div>
+            <div class="Amount">0</div><img title="Magenta Box" src="img/Magenta Box.png" alt=""></div>
+        <div class="Purple_Box ResourceBlock">
+            <div class="Title">Purple Box</div>
+            <div class="Amount">0</div><img title="Purple Box" src="img/Purple Box.png" alt=""></div>
+        <div class="Blue_Box ResourceBlock">
+            <div class="Title">Blue Box</div>
+            <div class="Amount">0</div><img title="Blue Box" src="img/Blue Box.png" alt=""></div>
+        <div class="Clear"></div>
+        <div class="ResourceTitle">Keys</div>
         <div class="Blue_Key ResourceBlock">
             <div class="Title">Blue Key</div>
             <div class="Amount">0</div><img title="Blue Key" src="img/Blue Key.png" alt=""></div>
@@ -71,16 +341,21 @@
             <div class="Title">Yellow Key</div>
             <div class="Amount">0</div><img title="Yellow Key" src="img/Yellow Key.png" alt=""></div>
         <div class="Clear"></div>
+        <div class="ResourceTitle">Steel</div>
         <div class="Steel ResourceBlock">
             <div class="Title">Steel</div>
             <div class="Amount">0</div><img title="Steel" src="img/Steel.png" alt=""></div>
         <div class="Refined_Steel ResourceBlock">
             <div class="Title">Refined Steel</div>
             <div class="Amount">0</div><img title="Refined Steel" src="img/Refined Steel.png" alt=""></div>
+        <div class="Mystery_Steel ResourceBlock">
+            <div class="Title">Mystery Steel</div>
+            <div class="Amount">0</div><img title="Mystery Steel" src="img/Mystery Steel.png" alt=""></div>
+        <div class="Clear"></div>
+        <div class="ResourceTitle">Minerals</div>
         <div class="Stone ResourceBlock">
             <div class="Title">Stone</div>
             <div class="Amount">0</div><img title="Stone" src="img/Stone.png" alt=""></div>
-        <div class="Clear"></div>
         <div class="Ruby ResourceBlock">
             <div class="Title">Ruby</div>
             <div class="Amount">0</div><img title="Ruby" src="img/Ruby.png" alt=""></div>
@@ -108,20 +383,13 @@
         <div class="Emerald ResourceBlock">
             <div class="Title">Emerald</div>
             <div class="Amount">0</div><img title="Emerald" src="img/Emerald.png" alt=""></div>
+        <div class="Clear"></div>
+        <div class="ResourceTitle">Archelogy</div>
         <div class="Fossils ResourceBlock">
             <div class="Title">Fossils</div>
             <div class="Amount">0</div><img title="Fossils" src="img/Fossils.png" alt=""></div>
         <div class="Clear"></div>
-        <div class="Boxes ResourceBlock">
-            <div class="Title">Boxes</div>
-            <div class="Amount">0</div><img title="Boxes" src="img/Boxes.png" alt=""></div>
-        <div class="Old_Box ResourceBlock">
-            <div class="Title">Old Box</div>
-            <div class="Amount">0</div><img title="Old Box" src="img/Old Box.png" alt=""></div>
-        <div class="Unknown ResourceBlock">
-            <div class="Title">Unknown</div>
-            <div class="Amount">0</div><img title="Unknown" src="img/Unknown.png" alt=""></div>
-        <div class="Clear"></div>
+        <div class="ResourceTitle">Bricks</div>        
         <div class="Stone_Bricks ResourceBlock">
             <div class="Title">Stone Bricks</div>
             <div class="Amount">0</div><img title="Stone Bricks" src="img/Stone Bricks.png" alt=""></div>
@@ -132,9 +400,10 @@
             <div class="Title">Brick</div>
             <div class="Amount">0</div><img title="Brick" src="img/Brick.png" alt=""></div>
         <div class="Clear"></div>
-        <div class="Malachite ResourceBlock">
+        <div class="ResourceTitle">Crystals</div>
+        <div class="Forest_Crystal ResourceBlock">
             <div class="Title">Forest Crystal</div>
-            <div class="Amount">0</div><img title="Forest Crystal" src="img/Malachite.png" alt=""></div>
+            <div class="Amount">0</div><img title="Forest Crystal" src="img/Forest Crystal.png" alt=""></div>
         <div class="Blood_Crystal ResourceBlock">
             <div class="Title">Blood Crystal</div>
             <div class="Amount">0</div><img title="Blood Crystal" src="img/Blood Crystal.png" alt=""></div>
@@ -147,16 +416,12 @@
         <div class="Snow_Crystal ResourceBlock">
             <div class="Title">Snow Crystal</div>
             <div class="Amount">0</div><img title="Snow Crystal" src="img/Snow Crystal.png" alt=""></div>
-        <div class="Clear"></div>
-        <div class="Ice ResourceBlock">
-            <div class="Title">Ice</div>
-            <div class="Amount">0</div><img title="Ice" src="img/Ice.png" alt=""></div>
-        <div class="Packed_Snow ResourceBlock">
-            <div class="Title">Packed Snow</div>
-            <div class="Amount">0</div><img title="Packed Snow" src="img/Packed Snow.png" alt=""></div>
+
     </div>
     <div class="AreaName">Frozen Diamond Ocean</div>
     <div class="Tower Tower_1">
+        <div class="ResourcesClick"><img src="img/Resources Info.png" alt=""></div>
+        <div class="PlantClick"><img src="img/Plants.png" alt=""></div>
         <div class="BlockNum">1</div>
         <div class="BlockHP">10</div>
         <div class="startingHP">10</div>

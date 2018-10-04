@@ -17,47 +17,47 @@ body{background: royalblue;background-image: url("../img/background.jpg");backgr
 	position: absolute;;
 }
 .Block > img{
-	width:40px;	
+	width:80px;	
 }
 .Block_1{
 	left:180px;
 	z-index: 100;
 }
 .Block_2{
-	left:159px;
-	top:12px;
+	left:136px;
+	top:25px;
 	z-index: 101;
 }
 .Block_3{
 	left:180px;
-	top:24px;
+	top:52px;
 	z-index: 102;
 }
 .Block_4{
-	left:201px;
-	top:12px;
+	left:224px;
+	top:26px;
 	z-index: 101;
 }
 .Chunk_1{
 	z-index: 102;
 }
 .Chunk_2{
-	top:24px;
-	left:-41px;
+	top:52px;
+	left:-88px;
 	z-index: 103;
 }
 .Chunk_3{
-	top:24px;
-	left:41px;
+	top:52px;
+	left:88px;
 	z-index: 103;
 }
 .Chunk_4{
-	top:48px;
-	left:0px;
+	top:105px;
+	left:0px; /*change to zero*/
 	z-index: 104;
 }
 .Chunk_16_1{
-
+	position: absolute; left:-15px;
 }
 .Chunk_16_2{
 position: absolute;top: 48px;left: -83px;z-index: 150;;;;;

@@ -293,7 +293,7 @@ Compressed_Ice_Amount = 0;
         for (var i = 1; i <= Num_Of_Floors; i++) {
             $('.Floor_' + i).find('img').each(function(v, e) {
 
-                if (v == 21 || v == 22 || v == 29 || v == 30 || v == 53 || v == 54 || v == 61 || v == 62 || v == 42 || v == 43 || v == 46 || v == 47 || v == 58 || v == 59 || v == 62 || v == 63) {
+                if (v == 5 || v == 6 || v == 13 || v == 14 || v == 15 || v == 10 || v == 11) {
                     $(this).attr('src', $($('.Floor_' + (i + 1)).find('img')[v]).attr('src'))
                 } else if (i == 1) {
                     $(this).attr('src', 'img/' + $($('.Floor_' + (i + 1)).find('img')[v]).data('Name').replace(/_/g, " ") + '.png')

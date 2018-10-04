@@ -201,10 +201,10 @@ position: absolute;top: 96px;left: 0px;z-index: 151;;;;;
 
 }
 .CloseWindow{
-	position: absolute;
+	position: fixed;
 	z-index: 121;
 	right: 14px;
 	width: 50px;;;
-	top:10px;
+	top:10px;;
 
 }

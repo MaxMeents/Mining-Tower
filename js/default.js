@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    Num_Of_Floors = 15;
+    Num_Of_Floors = 20;
 Dirt_Amount = 0;
 Rich_Soil_Amount = 0;
 Very_Rich_Soil_Amount = 0;
@@ -182,7 +182,7 @@ Compressed_Ice_Amount = 0;
     $('.Floor').duplicate(Num_Of_Floors).appendTo('.Tower');
     z = 1;
     FloorTop = 0;
-    FloorTopAddAmount = 48;
+    FloorTopAddAmount = 23;
     for (var i = 0; i < Num_Of_Floors; i++) {
         $($('.Floor')[i]).addClass('Floor_' + z).css({ top: FloorTop, zIndex: 99 - z })
         z++;
